@@ -1,10 +1,10 @@
-###Setup and up
+### Setup and up
 * Install `docker`
 * Run `make provision`
 * Open in your browser `localhost:8080`
 
-###Up
+### Up
 Run `make up`
 
-###Down
+### Down
 Run `make down`
