@@ -1,0 +1,8 @@
+parameters:
+
+services:
+    App\Controller\HomeController:
+        public: true
+
+    App\Controller\GetAllClassesController:
+        public: true

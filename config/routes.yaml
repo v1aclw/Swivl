@@ -1,0 +1,9 @@
+home:
+  path: /
+  controller: App\Controller\HomeController
+
+classroom.get_all:
+  path: /classroom
+  methods:
+    - 'GET'
+  controller: App\Controller\GetAllClassesController
