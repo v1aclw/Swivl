@@ -14,9 +14,11 @@ interface ClassroomStorageInterface
 
     public function getById(int $id): ?ClassroomInterface;
 
-    public function create(string $name, bool $enabled): ClassroomInterface;
+    public function create(string $name, bool $enabled): int;
 
-    public function update(ClassroomInterface $classroom, string $name, bool $enabled): ClassroomInterface;
+    public function update(int $id, string $name, bool $enabled): bool;
 
     public function remove(int $id): bool;
+
+    public function updateStatus(int $id, bool $status): bool;
 }

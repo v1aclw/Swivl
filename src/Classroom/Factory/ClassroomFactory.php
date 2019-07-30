@@ -8,8 +8,8 @@ use App\Classroom\ClassroomInterface;
 
 class ClassroomFactory implements ClassroomFactoryInterface
 {
-    public function create(int $id, string $name, bool $enabled, ?\DateTimeInterface $createdAt = null): ClassroomInterface
+    public function create(int $id, string $name, \DateTimeInterface $createdAt, bool $enabled): ClassroomInterface
     {
-        return new Classroom($id, $name, $enabled, $createdAt);
+        return new Classroom($id, $name, $createdAt, $enabled);
     }
 }

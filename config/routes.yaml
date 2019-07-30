@@ -6,4 +6,54 @@ classroom.get_all:
   path: /classroom
   methods:
     - 'GET'
-  controller: App\Controller\GetAllClassesController
+  controller: App\Controller\GetAllClassroomController
+
+classroom.get:
+  path: /classroom/{id}
+  methods:
+    - 'GET'
+  controller: App\Controller\GetClassroomController
+  requirements:
+    id: '\d+'
+
+classroom.create:
+  path: /classroom
+  methods:
+    - 'POST'
+  controller: App\Controller\CreateClassroomController
+
+classroom.update:
+  path: /classroom/{id}
+  methods:
+    - 'PUT'
+  controller: App\Controller\UpdateClassroomController
+  requirements:
+    id: '\d+'
+
+classroom.delete:
+  path: /classroom/{id}
+  methods:
+    - 'DELETE'
+  controller: App\Controller\DeleteClassroomController
+  requirements:
+    id: '\d+'
+
+classroom.enable:
+  path: /classroom/{id}/enable
+  methods:
+    - 'PATCH'
+  controller: App\Controller\UpdateStatusClassroomController
+  requirements:
+    id: '\d+'
+  defaults:
+    status: 1
+
+classroom.disable:
+  path: /classroom/{id}/disable
+  methods:
+    - 'PATCH'
+  controller: App\Controller\UpdateStatusClassroomController
+  requirements:
+    id: '\d+'
+  defaults:
+    status: 0

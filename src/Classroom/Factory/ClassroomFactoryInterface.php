@@ -7,5 +7,5 @@ use App\Classroom\ClassroomInterface;
 
 interface ClassroomFactoryInterface
 {
-    public function create(int $id, string $name, bool $enabled, ?\DateTimeInterface $createdAt = null): ClassroomInterface;
+    public function create(int $id, string $name, \DateTimeInterface $createdAt, bool $enabled): ClassroomInterface;
 }

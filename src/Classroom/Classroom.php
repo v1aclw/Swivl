@@ -13,12 +13,12 @@ class Classroom implements ClassroomInterface
 
     private $enabled;
 
-    public function __construct(int $id, string $name, bool $enabled, ?\DateTimeInterface $createdAt = null)
+    public function __construct(int $id, string $name, \DateTimeInterface $createdAt, bool $enabled)
     {
         $this->id = $id;
         $this->name = $name;
-        $this->enabled = $enabled;
         $this->createdAt = $createdAt;
+        $this->enabled = $enabled;
     }
 
     public function getId(): int
@@ -46,7 +46,7 @@ class Classroom implements ClassroomInterface
         return [
             self::FIELD_ID => $this->id,
             self::FIELD_NAME => $this->name,
-            self::FIELD_CREATED_AT => $this->createdAt,
+            self::FIELD_CREATED_AT => $this->createdAt->format(\DateTimeInterface::W3C),
             self::FIELD_ENABLED => $this->enabled
         ];
     }

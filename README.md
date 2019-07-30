@@ -8,3 +8,6 @@ Run `make up`
 
 ### Down
 Run `make down`
+
+### How to use
+See `/config/routes.yaml`

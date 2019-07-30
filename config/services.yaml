@@ -4,5 +4,50 @@ services:
     App\Controller\HomeController:
         public: true
 
-    App\Controller\GetAllClassesController:
+    App\Controller\GetAllClassroomController:
         public: true
+        arguments:
+            - '@app.classroom.storage'
+
+    App\Controller\GetClassroomController:
+        public: true
+        arguments:
+            - '@app.classroom.storage'
+
+    App\Controller\CreateClassroomController:
+        public: true
+        arguments:
+            - '@app.classroom.storage'
+
+    App\Controller\UpdateClassroomController:
+        public: true
+        arguments:
+            - '@app.classroom.storage'
+
+    App\Controller\DeleteClassroomController:
+        public: true
+        arguments:
+            - '@app.classroom.storage'
+
+    App\Controller\UpdateStatusClassroomController:
+        public: true
+        arguments:
+            - '@app.classroom.storage'
+
+    app.classroom.factory:
+        class: App\Classroom\Factory\ClassroomFactory
+
+    app.classroom.storage: '@app.classroom.storage.mysql'
+
+    app.classroom.storage.mysql:
+        class: App\Classroom\Storage\MysqlClassroomStorage
+        arguments:
+            - '@database_connection'
+            - '@app.classroom.storage.serializer'
+
+    app.classroom.storage.serializer: '@app.classroom.storage.serializer.mysql'
+
+    app.classroom.storage.serializer.mysql:
+        class: App\Classroom\Storage\Serializer\MysqlClassroomStorageSerializer
+        arguments:
+            - '@app.classroom.factory'

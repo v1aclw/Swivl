@@ -28,7 +28,7 @@ CREATE TABLE `classroom` (
   `created_at` timestamp NOT NULL,
   `enabled` tinyint(1) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -37,6 +37,7 @@ CREATE TABLE `classroom` (
 
 LOCK TABLES `classroom` WRITE;
 /*!40000 ALTER TABLE `classroom` DISABLE KEYS */;
+INSERT INTO `classroom` VALUES (1,'5Б','2019-07-30 21:07:48',0),(2,'5А','2019-07-30 21:13:14',1);
 /*!40000 ALTER TABLE `classroom` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -49,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-07-30 19:50:48
+-- Dump completed on 2019-07-30 21:40:09

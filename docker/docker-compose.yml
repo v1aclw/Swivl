@@ -16,8 +16,6 @@ php:
     - mysql
 mysql:
   image: mysql
-  ports:
-    - "13306:3306"
   command: --default-authentication-plugin=mysql_native_password
   restart: always
   environment:
